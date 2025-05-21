@@ -1,0 +1,14 @@
+.home--founderWords{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote{
+    display: flex;
+    gap: 2vw;
+    width: 60%;
+}

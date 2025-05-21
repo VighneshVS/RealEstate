@@ -1,0 +1,25 @@
+.search{
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search--locationText{
+    width: 70%;
+    height: 2.5vh;
+}
+
+.search-params{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.search-trade, .search--propType, .search--sqft{
+    width: 33%;
+}

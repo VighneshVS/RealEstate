@@ -1,0 +1,6 @@
+.nav--navContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    list-style: none;
+}

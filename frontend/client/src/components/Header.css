@@ -1,0 +1,10 @@
+.app__Header{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    width: 100vw;
+    
+}

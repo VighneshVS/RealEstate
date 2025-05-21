@@ -1,0 +1,9 @@
+.app--aboutUs{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    justify-content: center;
+    padding: 0 2%;
+}

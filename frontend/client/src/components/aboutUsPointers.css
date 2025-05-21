@@ -1,0 +1,5 @@
+.home--aboutUsPointers{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}

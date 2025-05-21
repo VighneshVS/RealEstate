@@ -1,0 +1,11 @@
+.app--footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+
+.terms{
+    display: flex;
+    gap: 1vw;
+    justify-content: space-evenly;
+}
