@@ -18,6 +18,7 @@ function SearchProperties() {
   const navigate = useNavigate();
   
   const [proType, setProType] = useState();
+  const [location, setLocation] = useState("");
   const [trade, setTrade] = useState("Rent");
   const [sqft, setSqft] = useState(0);
 
@@ -31,14 +32,16 @@ function SearchProperties() {
   const handleSqft = (e)=> {
     setSqft(e.target.value);
   }
+  const handleLocation = (e)=> {
+    setLocation(e.target.value)
+  }
 
-  const dataToSend = [proType, sqft];
   const handleClick = () => {
     console.log(trade);
     if(trade === "Rent"){
-     navigate("/rent", {state: dataToSend})
+     navigate(`/rent/${location}&${proType}&${sqft}`)
     }else{
-      navigate("/sales", {state: dataToSend})
+      navigate(`/sales/${location}&${proType}&${sqft}`)
     }
   }
 
@@ -46,7 +49,7 @@ function SearchProperties() {
     <div className='search'>
       <Subheading text={'Search Properties'} />
       <h3>Look up rent estimates, comps and market trends for any property in the US.</h3>
-      <input type='text' className='search--locationText' placeholder='Search property by state' required></input>
+      <input type='text' className='search--locationText' placeholder='Search property by state' onChange={handleLocation} required></input>
       <form className='search-params'>
         <select className='search-trade' name='Rent/Sell' id='rent/sell' onChange={handleTrade}>
           <option value='Rent'>Rent</option>

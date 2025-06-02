@@ -1,11 +1,10 @@
 import React from 'react'
 import SearchProperties from '../constants/searchProperties'
 import Header from '../components/Header'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function Rent() {
-  const dataReceived = useLocation().state;
-  console.log(dataReceived);
+  const { location, proType, sqft } = useParams();
   return (
     <div className='app--rent'>
       <Header />

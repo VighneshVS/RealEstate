@@ -15,7 +15,6 @@ function Home() {
       </main>
     </div>
     <AboutUs />
-    <SearchProperties />
     <FounderWords />
     <Footer />
     </div>
