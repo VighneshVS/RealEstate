@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
 import Subheading from './subheading'
 import './searchProperties.css'
-import { useNavigate } from 'react-router-dom'
 
-function SearchProperties() {
+function SearchProperties({handleLocation, handleProType, handleDeed, handleSqft, handleSearch}) {
   /* const stateNames = [
     'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
     'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas',
@@ -15,35 +13,6 @@ function SearchProperties() {
   ]; */
 
   const propertyType = ['Single Family', 'Condo', 'Townhouse', 'Manufactured', 'Multi Family', 'Apartment'];
-  const navigate = useNavigate();
-  
-  const [proType, setProType] = useState();
-  const [location, setLocation] = useState("");
-  const [trade, setTrade] = useState("Rent");
-  const [sqft, setSqft] = useState(0);
-
-
-  const handleTrade = (e)=> {
-    setTrade(e.target.value);
-  }
-  const handlePropType = (e)=> {
-    setProType(e.target.value);
-  }
-  const handleSqft = (e)=> {
-    setSqft(e.target.value);
-  }
-  const handleLocation = (e)=> {
-    setLocation(e.target.value)
-  }
-
-  const handleClick = () => {
-    console.log(trade);
-    if(trade === "Rent"){
-     navigate(`/rent/${location}&${proType}&${sqft}`)
-    }else{
-      navigate(`/sales/${location}&${proType}&${sqft}`)
-    }
-  }
 
   return (
     <div className='search'>
@@ -51,12 +20,12 @@ function SearchProperties() {
       <h3>Look up rent estimates, comps and market trends for any property in the US.</h3>
       <input type='text' className='search--locationText' placeholder='Search property by state' onChange={handleLocation} required></input>
       <form className='search-params'>
-        <select className='search-trade' name='Rent/Sell' id='rent/sell' onChange={handleTrade}>
+        <select className='search-trade' name='Rent/Sell' id='rent/sell' onChange={handleDeed}>
           <option value='Rent'>Rent</option>
           <option value='Sale'>Sale</option> 
         </select>
 
-        <select className='search--propType' name='propertyType' id='propertyType' required onChange={handlePropType}>
+        <select className='search--propType' name='propertyType' id='propertyType' required onChange={handleProType}>
           <option className='placeholder-mock' value='' disabled hidden selected >Property Type</option>
           {propertyType.map(type => {
             return <option key={type} value={type}>{type}</option>
@@ -65,7 +34,7 @@ function SearchProperties() {
 
         <input type='text' className='search--sqft' placeholder='Sq. ft' onChange={handleSqft}/>
       </form>
-      <button className='search--button' onClick={handleClick}>SEARCH</button>
+      <button className='search--button' onClick={handleSearch}>SEARCH</button>
     </div>
   )
 }
