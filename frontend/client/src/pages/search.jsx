@@ -317,7 +317,7 @@ function Search() {
         },
     ]
 
-    const overscan = 10;
+    const overscan = 1;
     const startIndex = Math.max(0, Math.floor(scrollTop/itemHeight) - overscan);
     const endIndex = Math.min(details.length, Math.floor((scrollTop + windowHeight) /itemHeight));
 
